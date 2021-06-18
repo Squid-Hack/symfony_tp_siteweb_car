@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car index{% endblock %}
+
+{% block body %}
+    <h1>Car liste</h1>
+    <section id="car_page">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Model car</th>
+                    <th>Brand car</th>
+                    <th>Color</th>
+                    <th>Driver</th>
+                    <th>Garage</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for car in cars %}
+                <tr>
+                    <td>{{ car.id }}</td>
+                    <td>{{ car.modelCar }}</td>
+                    <td>{{ car.brandCar }}</td>
+                    <td>{{ car.colorCar }}</td>
+                    <td>
+                        {{ car.drivers | join(",")}}
+                    </td>
+                    <td>{{ car.garage }}</td>
+                    <td>
+                        <a href="{{ path('car_show', {'id': car.id}) }}">show</a>
+                        <a href="{{ path('car_edit', {'id': car.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <div id="create_new">
+        <a href="{{ path('car_new') }}">Create new</a>
+    </div>
+{% endblock %}

@@ -6,7 +6,10 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+             <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
+             <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
+             <link rel="preconnect" href="https://fonts.gstatic.com">
+             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +17,20 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <ul>
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/car">Car</a>
+                </li>
+            </ul>
+        </header>
+        {% block body %}
+        <section id=home_page>
+            <h2>Check your cars here</h2>
+        </section>
+        {% endblock %}
     </body>
 </html>
