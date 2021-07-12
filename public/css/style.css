@@ -6,6 +6,22 @@ body{
     overflow: hidden;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgb(173, 173, 173);
+}
+
+.btn{
+    background-color: white;
+    border: none;
+    margin: 2px;
+    width: 100px;
+}
+
 /* HEADER */
 
 header{
@@ -47,7 +63,7 @@ h2{
     font-size: 50px;
 }
 
-/* HOME */
+/* CAR */
 
 #car_page{
     justify-content: center;
@@ -73,10 +89,14 @@ table tr th{
     border-bottom: 1px solid white;
 }
 
-table tr td a{
+table tr td{
+    height: 26px;
+}
+
+/* table tr td a{
     color: white;
     text-decoration: none;
-}
+} */
 
 table tr td a:hover{
     color: rgb(173, 173, 173);
@@ -91,4 +111,36 @@ table tr td a:hover{
 #create_new a{
     color: white;
     text-decoration: none;
+}
+
+/* SHOW */
+#show{
+    text-align: center;
+}
+
+#show table{
+    margin: auto;
+    text-align: left;
+}
+
+#show table tbody {
+    display: flex;
+}
+
+#show table tbody tr {
+    display: flex;
+    flex-direction: column;
+}
+
+/* EDIT */
+
+#edit form div{
+    display: flex;
+    flex-direction: column;
+    /* width: 500px; */
+    padding: 0 270px;
+}
+
+div#car label{
+    width: 250px;
 }
